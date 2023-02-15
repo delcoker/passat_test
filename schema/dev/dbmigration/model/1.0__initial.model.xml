@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<migration xmlns="http://ebean-orm.github.io/xml/ns/dbmigration">
+    <changeSet type="apply">
+        <createTable name="reports" pkName="pk_reports">
+            <column name="id" type="bigint" primaryKey="true"/>
+            <column name="name" type="varchar"/>
+            <column name="details" type="varchar"/>
+            <column name="createdAt" type="localdatetime" defaultValue="'2020-04-26 00:00'" notnull="true"/>
+            <column name="updatedAt" type="localdatetime" defaultValue="'2020-04-26 00:00'" notnull="true"/>
+        </createTable>
+        <createTable name="sentiments" pkName="pk_sentiments">
+            <column name="id" type="bigint" primaryKey="true"/>
+            <column name="sentence" type="varchar"/>
+            <column name="sentiment" type="varchar(10)"/>
+            <column name="score" type="double" notnull="true"/>
+            <column name="reportId" type="bigint" references="reports.id" foreignKeyName="fk_sentiments_reportId" foreignKeyIndex="ix_sentiments_reportId"/>
+            <column name="createdAt" type="localdatetime" defaultValue="'2020-04-26 00:00'" notnull="true"/>
+            <column name="updatedAt" type="localdatetime" defaultValue="'2020-04-26 00:00'" notnull="true"/>
+        </createTable>
+    </changeSet>
+</migration>

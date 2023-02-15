@@ -1,0 +1,24 @@
+#env: live
+#
+#server:
+#  port: ${PORT}
+#
+#db:
+#  server: ${DB_SERVER} # deloop-user-mysql  # for docker
+#  name: ${DB_NAME} # deloop_user
+#  user: ${DB_USER} # root
+#  password: ${DB_PASSWORD} # 123
+#
+#domain:
+#  url: ${DOMAIN_URL}
+
+db:
+  driver: ${DB_DRIVER_EBEAN_LIVE}
+  language: ${DB_LANGUAGE_LIVE}
+  server: ${DB_SERVER_LIVE}
+  port: ${DB_PORT_LIVE}
+  name: ${DB_NAME_LIVE}
+  user: ${DB_USER_LIVE}
+  password: ${DB_PASSWORD_LIVE}
+  executeddl: ${DB_EXECUTE_DDL_LIVE} # overwrites/resets db if set to true CAUTION ⚠️
+  seed: ${DB_SEED_LIVE} # run migration script

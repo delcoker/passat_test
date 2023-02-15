@@ -1,0 +1,10 @@
+#env: stage
+#
+#server:
+#  port: 8080
+#
+#db:
+#  server: deloop-user-mysql  # for docker
+#  name: deloop_user
+#  user: root
+#  password: 123
